@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="options.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <main
+  style="
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  "
+  id="main"
+>
+  <header class=" upper">
+    <h2>File</h2>
+    <h2>Home</h2>
+    <h2>Insert</h2>
+    <h2>Layout</h2>
+    <h2>Help</h2>
+   </header>
+    <section class="tools" style="background-color: #f9fbfd">
+        <form id="form" class="options" onchange="onFormChange()">
+          <ul  id="menuOptionList">
+            <li>
+         <div id="copy" class="material-icons"onclick="onClickCopy(this)">content_copy</div>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -10px"> Copy </div>
+          </li>
+          <li>
+          <div id="cut" class="material-icons" onclick="onClickCut(this)">content_cut</div>
+            <div class="hoverSuggetion"style="padding: 5px 10px; left: -5px">Cut</div>
+            </li>
+            <li>
+            <div id="paste"class="material-icons"onclick="onClickPaste(this)">content_paste</div>
+            <div class="hoverSuggetion"style="padding: 5px 10px; left: -15px"> paste </div>
+          </li>
+          <div class="vertical-line" style="padding: 0"></div>
+          <li>
+          <select name="fontfamily" id="fontfamily">
+            <option value="'Courier New', Courier, monospace">Courier New</option>
+            <option value="'Times New Roman', Times, serif">
+              Times New Roman
+            </option>
+          </li>
+          <li>
+            <option value="Arial, Helvetica, sans-serif">Arial Helvatica</option>
+          </select>
+          <input
+            type="number"
+            name="fontsize"
+            min="8"
+            max="24"
+            value="16"
+            id="fontsize"
+            placeholder="Font Size"
+          />
+        </li> &nbsp; 
+        <div class="vertical-line" style="padding: 0"></div>
+          <li>
+          <div>
+            <input type="checkbox" id="bold" class="hidden-input" name="bold" />
+            <label class="material-icons option-btn" for="bold"> format_bold </label>
+          </div>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -10px" > Bold </div>
+          </li>
+          <li>
+          <div>
+            <input type="checkbox"id="italic"class="hidden-input" name="italic"/>
+            <label class="material-icons option-btn" for="italic">format_italic</label>
+           </div>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -10px" > Italic </div>
+          </li>
+          <li>
+          <div>
+            <input type="checkbox" id="underlined" class="hidden-input" name="underlined"/>
+            <label class="material-icons option-btn" for="underlined" >format_underlined</label>
+          </div>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -10px" > underline </div>
+          </li>
+          <li>
+          <div>
+            <input type="radio" name="textalign" id="left" class="hidden-input" checked value="left"  />
+            <label class="material-icons option-btn" for="left"
+              >format_align_left</label>
+           </div>    
+            <div class="hoverSuggetion" style="padding: 5px 10px; left: -30px">  Left </div>
+             </li>
+             <li>
+              <div>
+              <input
+                type="radio" name="textalign" id="center" class="hidden-input" value="center"/>
+              <label class="material-icons option-btn" for="center">format_align_center</label>
+              </div>
+               <div class="hoverSuggetion" style="padding: 5px 10px; left: -30px">Center</div>
+            </li>
+             <li>
+             <div>
+             <input type="radio" name="textalign" id="right" class="hidden-input" value="right"/>
+            <label class="material-icons option-btn" for="right">format_align_right</label>
+             </div>
+            <div class="hoverSuggetion" style="padding: 5px 10px; left: -30px"> Right </div>
+          </li>
+          <div class="vertical-line" style="padding: 0"></div>
+         <li>
+          <div>
+            <input
+              type="color"
+              name="textcolor"
+              id="textcolor"
+              class="hidden-input"
+              value="#000000" />
+            <label class="material-icons option-btn" for="textcolor"
+              >format_color_text</label
+            >
+          </div>
+          <div
+          class="hoverSuggetion"
+          style="padding: 5px 10px; left: -30px"
+        >
+          Text Color
+        </div>
+          </li>
+          <li>
+          <div>
+            <input type="color"  name="bgcolor"  id="bgcolor" class="hidden-input" value="#ffffff"/>
+            <label class="material-icons option-btn" for="bgcolor"
+              >format_color_fill</label
+            >
+          </div>
+
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -30px">Background Color </div>
+        </li>
+        <div class="vertical-line" style="padding: 0"></div>
+          <li>
+          <button type="button" class="material-icons" onclick="exportData()">
+            cloud_upload
+          </button>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -50px"> Upload</div>
+        </li>
+        <li>
+          <button type="button" class="material-icons">cloud_download</button>
+          <div class="hoverSuggetion" style="padding: 5px 10px; left: -50px"> Download</div>
+          </li>
+          <li><div class="vertical-line" style="padding: 0"></div> </li>
+          <li style=" position: relative;  max-width: 20px;   min-width: 20px; background-color: transparent;border: none;" class="column" >
+            <div
+              id="functions"
+              class="material-icons functions"
+              onclick="onClickFunctions(this)"
+              ondblclick="onBlurFunctions(this)"> functions </div>
+        
+            <div
+              class="dropdown-content function-dropdown"
+              style="align-items: start; background-color: white"
+              id="function-dropdown"
+            >
+              <a href="#" onclick="functionSum(this)">SUM</a>
+              <a href="#" onclick="functionAverage(this)">AVERAGE</a>
+              <a href="#" onclick="functionCount(this)">COUNT</a>
+              <a href="#" onclick="functionMax(this)">MAX</a>
+              <a href="#" onclick="functionMin(this)">MIN</a>
+            </div>
+          </li>
+          
+          <li
+          style="
+            position: relative;
+            display: flex;
+            background-color: #edf2fa; " id="search" >
+          <div
+            id="functions"
+            class="material-icons functions"
+            onclick="onClickFunctions(this)"
+            style="background: transparent">search
+      </div>
+          <div
+            contenteditable="true"
+            class="search"
+            id="searchInput"
+            style="padding-left: 10px">What you want search ?
+          </div>
+        </li>
+      
+          </ul>
+        </form>
+        <div class="bottom-section">
+          <div id="active-cell">null</div>
+          <input
+            oninput="onChangeFontSize()"
+            type="text"
+            class="expression"
+            placeholder="f( x )"
+          />
+        </div>
+      
+      </section>
+
+
+
+      <div class="dropdown"></div>
+     <section class="root-container">
+        <div class="header"></div>
+        <div class="body">
+          <div class="sno"></div>
+          <div class="main"></div>
+        </div>
+      </section>
+
+      <div id="footer">
+        <div class="material-icons" id="addSheet">add</div>
+        <div class="sheets" id="sheets"></div>
+      </div>
+      </main>
+
+      <script src="option.js"></script>
+    <script src="./index.js"></script>
+    <script src="./export.js"></script>
+    <script src="function.js"></script>
+    <!-- <script src="search.js"></script> -->
+</body>
+</html>

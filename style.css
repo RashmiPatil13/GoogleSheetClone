@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: root-font;
+}
+
+.upper{
+  display: flex;
+  background-color:rgb(1, 76, 1);
+  gap:20px;
+  color: white;
+  padding-top: 10px;
+  padding-left:20px;
+}
+.upper>h2:hover{
+  background-color: rgb(255, 255, 255);
+  color: green;
+  font-size: x-large;
+}
+.hoverSuggetion{
+position: absolute;
+background-color: #232323;
+border-radius: 5px;
+color: #fff;
+font-size: 14px;
+display: none;
+min-width: max-content;
+top: 38px;
+}
+#menuOptionList {
+display: flex;
+flex-direction: row;
+list-style-type: none;
+font-family: open Sans;
+color: #202124;
+border-radius: 10px;
+background-color: #edf2fa;
+padding: 5px;
+align-items: center;
+flex-wrap: wrap;
+}
+#menuOptionList > li {
+padding: 2px 0px;
+margin-left: 20px;
+position: relative;
+}
+#menuOptionList > li > div {
+padding: 2px;
+}
+#menuOptionList :hover {
+background-color: #e1e3e6;
+border-radius: 5px;
+cursor: pointer;
+}
+#menuOptionList :hover .hoverSuggetion {
+display: block;
+}
+#functions :hover .dropdown-content {
+display: block;
+}
+
+.column .dropdown {
+position: absolute;
+display: none;
+max-width: 19px;
+justify-content: center;
+border-radius: 50%;
+align-items: left;
+left: 30px;
+}
+
+.column .dropbtn {
+font-size: 20px;
+border: none;
+cursor: pointer;
+background-color: transparent;
+padding: 0;
+overflow: hidden;
+min-width: fit-content;
+min-height: fit-content;
+}
+
+.column:hover .dropdown {
+position: absolute;
+display: flex;
+
+justify-content: center;
+border-radius: 50%;
+align-items: center;
+left: 75px;
+white-space: nowrap;
+}
+
+.dropdown:hover {
+background-color: #f0f1f0;
+}
+
+.column .dropdown-content {
+display: none;
+position: absolute;
+background-color: white;
+min-width: 160px;
+top: 27px;
+left: -4px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+padding: 10px 0px;
+outline: none;
+
+}
+
+
+.column .dropdown-content a {
+color: black;
+padding: 5px 25px;
+text-decoration: none;
+display: block;
+border: 0px;
+font-size: 12px;
+
+}
+
+.column .icons {
+position: absolute;
+top: 5px;
+left: -10;
+font-size: 17px;
+}
+
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+.column .show {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+.search {
+background-color: white;
+min-width: 300px;
+border-radius: 5px;
+}
+
+#searchInput {
+outline: none;
+border: none;
+color: #bbbbbb;
+}
+
+#searchInput:focus {
+border: 2px solid #0b57d2;
+}
+#search :hover {
+background-color: white;
+}
+.vertical-line {
+background-color: #e1e3e6;
+width: 1px;
+height: 30px;
+}
+.root-container {
+  width: 100vw ;
+  height: 80vh ;
+  overflow: scroll;
+}
+
+.header{ 
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  width: fit-content;
+}
+.cell {
+  min-width: 150px;
+  padding: 5px;
+  border: 1px solid #C4C7C5 ;
+}
+.header-cell {
+  text-align: center;
+  color: #444746;
+}
+.sno-cell {
+  text-align: center;
+}
+.body {
+  display: flex;
+ width: fit-content;
+}
+.sno {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+}
+.header > div:nth-child(1) {
+  left: 0;
+  position: sticky;
+  z-index: 100;
+  background-color: #e7e7e7;
+}
+.main {
+  height: 100px;
+}
+
+.row {
+  display: flex;
+}
+.active-option {
+  background-color: #d3e3fd;
+  border-radius: 5px;
+  color: black;
+}
+.math-position {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0px;
+  align-items: center;
+  background-color: white;
+}
+#math {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  .tools{
+    overflow-x: scroll;
+  }
+}
